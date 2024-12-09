@@ -27,6 +27,15 @@ export const LoginSchema = z.object({
     .trim(),
 });
 
+export const OrgSchema = z.object({
+  name: z.string().min(2, { message: 'Name must be at least 2 characters long.' }).trim(),
+});
+
+export const OwnerSchema = z.object({
+  name: z.string().min(2, { message: 'Name must be at least 2 characters long.' }).trim(),
+  email: z.string().email({ message: 'Please enter a valid email.' }).trim(),
+});
+
 export const UserSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters long.' }).trim(),
   email: z.string().email({ message: 'Please enter a valid email.' }).trim(),
